@@ -1,0 +1,28 @@
+PROYECTO API POKEMON
+
+Ruta base en mi local: http://api.test/api/
+
+1. Base de datos local, nombre: app-test.
+2. Tabla de users.
+3. Seguridad, validación de token por usuario, para ello se utilizo el recurso Laravel/Sanctum.
+4. Para ejecutar la API Pokemon, primero se deben loguear con el siguiente EndPoint
+    - /login
+        Parametros: 
+            -email
+            -password
+            -device (Es el tipo de dispositivo en el que se encuentra)
+    Al loguear, el sistema le crea un token en el que funcionara solo para el dispositivo donde se haya logueado.
+5. Para buscar los 100 primeros pokemones use el siguiente EndPoint.
+    - /pokemon
+        Authorization: Bearer 1|hWSDv1kYhPrVfMB5izKX9YjULOCfMqfIUBc1lEUb (EJEMPLO)
+6. Para buscar pokemones por caracteristica use el siguiente EndPoint.
+    - /pokemonByFilter
+        Authorization: Bearer 1|hWSDv1kYhPrVfMB5izKX9YjULOCfMqfIUBc1lEUb (EJEMPLO)
+        Parametros: (Solo se permite de un Parametro por consulta)
+            - pokemon: {id name}
+            - pokemon-color: {id name}
+            - pokemon-species: {id name}
+            - pokemon-form: {id name}
+            - pokemon-habitat: {id name}
+            - pokemon-shape: {id name}
+        
